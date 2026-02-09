@@ -7,3 +7,4 @@ wp-content/themes/*
 !wp-content/themes/dw
 !wp-content/themes/dw/*
 !wp-content/themes/dw/**/*
+wp-content/themes/dw/node_modules
