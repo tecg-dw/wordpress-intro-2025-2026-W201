@@ -3,6 +3,7 @@ import {globSync} from "glob";
 import fs from "fs";
 
 export default defineConfig({
+  base: "/wp-content/themes/dw/public/",
   plugins: [
     {
       name: 'bundle-js',
@@ -11,7 +12,7 @@ export default defineConfig({
         const files = globSync('./wp-content/themes/dw/assets/js/app/*.js');
 
         // Fusionner tous les fichiers JS dans un seul fichier
-        const combinedJs = files.map(file => fs.readFileSync(file, 'utf8')).join('\n\n');
+        const combinedJs = files.map(file => fs.readFileSync(file, 'utf8')).join('\n');
 
         // Crée un fichier combiné dans le fichier main.js
         fs.writeFileSync('./wp-content/themes/dw/assets/js/main.js', combinedJs);
