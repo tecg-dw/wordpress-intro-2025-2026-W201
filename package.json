@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.4",
     "chokidar-cli": "^3.0.0",
     "glob": "^13.0.1",
