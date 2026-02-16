@@ -1,1 +1,1 @@
-<?php /* Template Name: Contact */
+<?php /* Template Name: Contact */ ?>
