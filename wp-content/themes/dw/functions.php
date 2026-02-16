@@ -62,4 +62,19 @@ function dw_asset(string $file): string {
   // Si manifest introuvable ou asset non trouvé, on retourne une chaîne vide
   return '';
 }
+// Activer l'utilisation des vignettes (image de couverture) sur nos posts "Formations"
+add_theme_support('post-thumbnails', ['training']);
 
+// Déclaration d'un CPT (Custom Post Type) "Training" pour les formations
+register_post_type('training', [
+  'label' => 'Formations',
+  'description' => 'Les formations présentes sur mon site web',
+  'menu_position' => 2,
+  'menu_icon' => 'dashicons-welcome-learn-more',
+  'public' => true,
+  'has_archive' => true,
+  'rewrite' => [
+    'slug' => 'formations',
+  ],
+  'supports' => ['title', 'excerpt', 'thumbnail'],
+]);
