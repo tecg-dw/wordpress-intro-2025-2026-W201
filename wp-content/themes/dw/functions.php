@@ -72,6 +72,7 @@ register_post_type('training', [
   'menu_position' => 2,
   'menu_icon' => 'dashicons-welcome-learn-more',
   'public' => true,
+   //'show_ui' => true, à mettre s'il est en public false, mais qu'on veut le voir dans le back-office
   'has_archive' => true,
   'rewrite' => [
     'slug' => 'formations',
