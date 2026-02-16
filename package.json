@@ -1,0 +1,32 @@
+{
+  "name": "dw-wordpress-201",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "chokidar './wp-content/themes/dw/assets/js/app/**/*.js' './wp-content/themes/dw/assets/css/**/*' -c 'vite build'",
+    "serve": "browser-sync start --proxy 'http://wordpress-demo-201.test/' --files 'wp-content/themes/dw/public/**/*' --no-https --port 8000"
+  },
+  "keywords": [],
+  "author": "Dylan Jacquet",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.4",
+    "chokidar-cli": "^3.0.0",
+    "glob": "^13.0.1",
+    "sass": "^1.97.3",
+    "vite": "^7.3.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "iOS >= 10",
+    "IE 11",
+    "not IE 10",
+    "Firefox ESR",
+    "Chrome >= 50",
+    "Android >= 4.4",
+    "Safari >= 9"
+  ]
+}

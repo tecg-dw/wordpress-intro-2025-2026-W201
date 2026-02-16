@@ -9,3 +9,8 @@ wp-content/themes/*
 !wp-content/themes/dw/**/*
 wp-content/themes/dw/node_modules
 wp-content/themes/dw/public
+wp-content/themes/dw/public/*
+node_modules
+!postcss.config.js
+!vite.config.js
+!package.json
