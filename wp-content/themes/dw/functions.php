@@ -28,6 +28,38 @@ function init_remove_support(): void
   remove_post_type_support('product', 'editor');
 }
 
+// Déclaration des menus dans wordpress
+register_nav_menu('header', 'Le menu de navigation principal qui se trouve en haut de la page');
+register_nav_menu('footer', 'Le menu de navigation de fin de page');
+register_nav_menu('social-media', 'Le menu de navigation pour les réseaux sociaux');
+register_nav_menu('utils', 'Le menu de navigation pour les ressources utiles');
+
+// Function permettant de récupérer les éléments d'un menu de navigation sous forme de lien
+function dw_get_navigation_links(string $location): array {
+  // Récupérer l'objet W¨pour le menu
+  $locations = get_nav_menu_locations();
+
+  if (!isset($locations[$location])) {
+    return [];
+  }
+
+  $nav_id = $locations[$location];
+  $nav = wp_get_nav_menu_items($nav_id);
+
+  // Transformer le menu en tableau de liens, chaque lien va être un objet personnalisé
+  $links = [];
+
+  foreach ($nav as $post) {
+    $link = new stdClass();
+    $link->href = $post->url;
+    $link->label = $post->title;
+
+    $links[] = $link;
+  }
+
+  return $links;
+}
+
 // Fonction qui retourne l'URL d'un asset (css ou js) compilé par Vite
 function dw_asset(string $file): string {
 
@@ -79,3 +111,13 @@ register_post_type('training', [
   ],
   'supports' => ['title', 'excerpt', 'thumbnail'],
 ]);
+
+
+// Ajouts d'une page d'option (exemple de la documentation)
+acf_add_options_page(array(
+  'page_title'    => 'Theme General Settings',
+  'menu_title'    => 'Theme Settings',
+  'menu_slug'     => 'theme-general-settings',
+  'capability'    => 'edit_posts',
+  'redirect'      => false
+));
