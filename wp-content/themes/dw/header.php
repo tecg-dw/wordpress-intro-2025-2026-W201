@@ -30,6 +30,7 @@
         <a href="<?= $link->href ?>"><?= $link->label ?></a>
       </li>
     <?php endforeach; ?>
+    <?php get_search_form(); ?>
   </ul>
 </nav>
 
