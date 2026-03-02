@@ -1,7 +1,48 @@
 <?php get_header(); ?>
+<?php
+$taxonomy = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : '';
 
-<h1>Nos formations !</h1>
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
+$args = [
+        'post_type' => 'training',
+        'post_status' => 'publish',
+        'posts_per_page' => 12,
+];
+
+if ($taxonomy !== '') {
+  $args['tax_query'] = [
+          [
+                  'taxonomy' => 'training_level',
+                  'field' => 'slug',
+                  'terms' => $taxonomy,
+          ]
+  ];
+}
+$query = new WP_Query($args);
+?>
+
+
+<h1>Nos formations <?= $taxonomy ?>!</h1>
+
+<div>
+  <ul>
+    <li>
+      <a href="/formations">
+        Tout
+      </a>
+      <a href="/formations?filter=debutant">
+        Debutant
+      </a>
+      <a href="/formations?filter=intermediaire">
+        Intermediaire
+      </a>
+      <a href="/formations?filter=expert">
+        Expert
+      </a>
+    </li>
+  </ul>
+</div>
+
+<?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
   <section>
     <h2><?= get_the_title() ?></h2>
     <p><?= get_the_excerpt() ?></p>
@@ -10,5 +51,7 @@
   </section>
 <?php endwhile; else: ?>
   <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
+<?php endif;
+wp_reset_postdata();
+?>
 <?php get_footer(); ?>

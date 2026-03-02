@@ -86,6 +86,14 @@ register_post_type('training', [
   'supports' => ['title', 'excerpt', 'thumbnail'],
 ]);
 
+// Déclarer une taxonomy
+
+register_taxonomy('training_level', ['training'], [
+  'label' => 'Le niveau de la formation',
+  'public' => true,
+  'hierarchical' => true,
+]);
+
 
 // Ajouts d'une page d'option (exemple de la documentation)
 acf_add_options_page(array(

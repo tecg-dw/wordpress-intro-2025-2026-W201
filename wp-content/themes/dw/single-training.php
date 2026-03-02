@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<p style="font-size: 36px">Je suis la page single</p>
+
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
   <h1><?= get_the_title() ?></h1>
   <p><?= get_the_excerpt() ?></p>
