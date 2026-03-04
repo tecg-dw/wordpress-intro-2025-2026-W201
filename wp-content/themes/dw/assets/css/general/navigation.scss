@@ -1,0 +1,16 @@
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    &-item {
+      &--link {
+        padding: 0 1rem;
+        text-decoration: none;
+        font-size: 1rem;
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+      }
+    }
+  }
+}

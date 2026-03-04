@@ -11,23 +11,22 @@
 </head>
 <body>
 <h1 class="sro"><?= get_the_title() ?></h1>
-<nav> <!-- Menu de navigation par Wordpress -->
+<!--<nav>  Menu de navigation par Wordpress
   <h2 class="sro">Menu de navigation</h2>
-  <?php
   wp_nav_menu([
           'theme_location' => 'header',
           'container' => false,
           'menu_class' => 'ul-container',
           'container_class' => 'div-container',
   ]);
-  ?>
-</nav>
-<nav> <!-- Navigation homemade -->
-  <h2>Menu de navigation custom</h2>
-  <ul>
+
+</nav> -->
+<nav class="navigation"> <!-- Navigation homemade -->
+  <h2 class="navigation__title sro">Menu de navigation custom</h2>
+  <ul class="navigation__list">
     <?php foreach (dw_get_navigation_links('header') as $link) : ?>
-      <li>
-        <a href="<?= $link->href ?>"><?= $link->label ?></a>
+      <li class="navigation__list-item">
+        <a class="navigation__list-item--link" href="<?= $link->href ?>"><?= $link->label ?></a>
       </li>
     <?php endforeach; ?>
     <?php get_search_form(); ?>

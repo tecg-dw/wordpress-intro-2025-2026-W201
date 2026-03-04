@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php
+$terms = get_terms('training_level');
 $taxonomy = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : '';
 
 $args = [
@@ -18,6 +19,7 @@ if ($taxonomy !== '') {
   ];
 }
 $query = new WP_Query($args);
+
 ?>
 
 
@@ -29,9 +31,11 @@ $query = new WP_Query($args);
       <a href="/formations">
         Tout
       </a>
-      <a href="/formations?filter=debutant">
-        Debutant
+      <?php foreach ($terms as $term): ?>
+      <a href="/formations?filter=<?= $term->slug ?>">
+        <?= $term->name; ?>
       </a>
+      <?php endforeach; ?>
       <a href="/formations?filter=intermediaire">
         Intermediaire
       </a>
