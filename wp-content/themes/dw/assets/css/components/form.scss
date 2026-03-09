@@ -1,0 +1,47 @@
+.form {
+  &__container {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 1.25em;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    font-size: 1rem;
+  }
+
+  &__input {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0.5rem;
+  }
+
+  &__textarea {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0.5rem;
+  }
+
+  &__button {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    background-color: black;
+    padding: 0.5rem;
+  }
+}
