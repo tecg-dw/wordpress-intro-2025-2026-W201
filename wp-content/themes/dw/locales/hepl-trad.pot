@@ -1,0 +1,30 @@
+# Copyright (C) 2026 HEPL
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Theme Design Web 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dw\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-20T08:59:25+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: hepl-trad\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Theme Design Web"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Description pour le thème DW"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "HEPL"
+msgstr ""

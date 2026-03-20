@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 use controllers\ContactForm;
+
 include('core/theme/configuration.php');
 include('core/controllers/ContactForm.php');
 
@@ -192,19 +193,13 @@ acf_add_options_page(array(
   'redirect' => false
 ));
 
+//charger les traductions existantes
+load_theme_textdomain('hepl-trad', get_template_directory() . '/locales');
 
-
-
-
-
-
-
-
-
-
-
-
-
+function __hepl($translation): ?string
+{
+  return __($translation, 'hepl-trad');
+}
 
 
 
