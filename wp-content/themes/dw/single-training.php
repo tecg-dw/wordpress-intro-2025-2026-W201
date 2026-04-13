@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<?php
+$level = get_field('level');
+
+?>
+
 <p style="font-size: 36px"><?= __hepl('Je suis la page single') ?>/p>
 <p style="font-size: 36px"><?= __hepl('Je suis la page single2') ?>/p>
 
@@ -8,6 +13,7 @@
   <p><?= get_the_excerpt() ?></p>
   <a href="<?= get_the_permalink() ?>" title="Lien vers ma page de formation : <?= get_the_title() ?>" target="_blank">Découvrir
     cette formation !</a>
+<?php get_template_part('templates/components/text-media/text-media'); ?>
 <?php endwhile; else: ?>
   <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 <?php endif; ?>

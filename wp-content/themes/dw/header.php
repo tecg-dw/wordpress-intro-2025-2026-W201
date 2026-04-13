@@ -57,6 +57,9 @@
            href="<?= $lang['url'] ?>"><?= strtoupper($lang['slug']) ?></a>
       </li>
     <?php endforeach; ?>
+    <?php $falc = isset($_GET['falc']) ? sanitize_text_field($_GET['falc']) : ''; ?>
+
+    <a href="/<?= $falc ? '' : '?falc=true'; ?>" title=""><?= $falc ? 'Classique' : 'Mode falc'; ?></a>
     <?php get_search_form(); ?>
   </ul>
 </nav>

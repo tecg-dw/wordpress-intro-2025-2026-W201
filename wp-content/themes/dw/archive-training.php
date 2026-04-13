@@ -47,6 +47,10 @@ $query = new WP_Query($args);
 </div>
 
 <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
+
+<?php
+  $description = get_field('description_mega_longue');
+  ?>
   <section>
     <h2><?= get_the_title() ?></h2>
     <p><?= get_the_excerpt() ?></p>

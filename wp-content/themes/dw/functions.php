@@ -201,5 +201,6 @@ function __hepl($translation): ?string
   return __($translation, 'hepl-trad');
 }
 
-
-
+add_image_size('square-small', 400, 400, true);
+add_image_size('square-medium', 800, 800, true);
+add_image_size('square-large', 1200, 1200, true);
